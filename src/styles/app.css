@@ -5,6 +5,7 @@
   --border-width: 3px;
   --primary-color: #282828;
   --secondary-color: #cbd5e1;
+  --tertiary-color: #ff1154;
 }
 
 body {
@@ -90,10 +91,23 @@ footer {
 
 .page-container {
   display: block;
+  height: calc(100% - 4rem);
   margin: 0 auto;
   max-width: 800px;
-  padding: 2rem;
-  padding-top: 2rem;
-  padding-bottom: 6rem;
-  height: calc(100% - 4rem);
+  padding: 2rem 2rem 10rem 2rem;
+}
+
+.contact-link {
+  color: var(--secondary-color);
+  font-weight: 600;
+  padding: 0;
+  text-decoration: none;
+  transition: color 0.14s ease-out, transform 0.14s ease-out,
+    text-decoration 0.3s ease-out;
+}
+
+.contact-link:hover {
+  color: var(--tertiary-color);
+  text-decoration: underline;
+  transform: translateX(2px);
 }

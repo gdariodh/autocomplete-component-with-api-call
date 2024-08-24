@@ -1,4 +1,5 @@
 import { ArtistSource, ArtistDetail } from '@/models';
+import { removeDuplicates } from '@/utils';
 
 export const artistsSourceAdapter = (artists: any[]): ArtistSource[] => {
   return artists?.map((artist: any) => {
@@ -22,9 +23,10 @@ export const artistDetailAdapter = (artist: any): ArtistDetail => {
     label: name,
     name,
     followers: artist?.followers?.total,
-    genres: artist?.genres,
+    genres: removeDuplicates(artist?.genres),
     popularity: artist?.popularity,
     spotifyUrl,
     image,
+    type: artist?.type,
   };
 };

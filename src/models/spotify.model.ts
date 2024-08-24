@@ -22,4 +22,5 @@ export interface ArtistDetail extends ArtistSource {
   genres: string[];
   popularity: number;
   spotifyUrl: string;
+  type: string;
 }

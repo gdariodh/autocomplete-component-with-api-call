@@ -1,0 +1,68 @@
+/* pill */
+.pill {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  display: inline-flex;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  text-wrap: wrap;
+  position: relative;
+  border: var(--border-width) solid var(--primary-color);
+  border-radius: var(--border-radius);
+}
+
+/* title variants */
+.titleSmall {
+  font-size: 1rem;
+}
+
+.titleMedium {
+  font-size: 1.25rem;
+}
+
+.titleLarge {
+  font-size: 1.5rem;
+}
+
+/* paragraph variants */
+.paragraphSmall {
+  font-size: 0.875rem;
+}
+
+.paragraphMedium {
+  font-size: 1rem;
+}
+
+.paragraphLarge {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .pill {
+    font-size: 1rem;
+  }
+
+  .titleSmall {
+    font-size: 1.25rem;
+  }
+
+  .titleMedium {
+    font-size: 1.75rem;
+  }
+
+  .titleLarge {
+    font-size: 2.25rem;
+  }
+
+  .paragraphSmall {
+    font-size: 1rem;
+  }
+
+  .paragraphMedium {
+    font-size: 1.25rem;
+  }
+
+  .paragraphLarge {
+    font-size: 1.5rem;
+  }
+}

@@ -12,12 +12,15 @@ export interface Option {
 }
 
 export interface AutoCompleteInputProps {
+  placeholder?: string;
+  delay?: number;
   source: (search: string) => Promise<Option[]>;
   handleSelection: (value: any) => void;
 }
 
-export interface SuggestionItemProps {
+export interface OptionItemProps {
   item: Option;
+  isActive: boolean;
 }
 
 export interface UseAutoCompleteProps {
@@ -33,17 +36,18 @@ export interface UseAutoCompleteReturn {
   isBusy: boolean;
   suggestions: Option[];
   selectedIndex: number;
+  clearSuggestions: () => void;
 }
 
-interface BindOptions {
+export interface BindOptions {
   ref: React.RefObject<HTMLUListElement>;
 }
 
-interface BindOption {
+export interface BindOption {
   onClick: (e: React.MouseEvent<HTMLLIElement>) => void;
 }
 
-interface BindInput {
+export interface BindInput {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;

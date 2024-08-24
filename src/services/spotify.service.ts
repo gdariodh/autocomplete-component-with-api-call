@@ -26,6 +26,15 @@ export const createAccessToken = async () => {
   }
 };
 
+export const verifyIfTokenIsValid = async (status: number) => {
+  if (status === 401) {
+    await createAccessToken();
+    return true;
+  }
+
+  return false;
+};
+
 export const getArtistsBySearch = async (search: string) => {
   try {
     const res = await fetch(`${API_BASE_URL}/search?type=artist&q=${search}`, {
@@ -33,6 +42,12 @@ export const getArtistsBySearch = async (search: string) => {
         Authorization: `Bearer ${getToken()}`,
       },
     });
+
+    if (await verifyIfTokenIsValid(res.status)) {
+      await getArtistsBySearch(search);
+      return [];
+    }
+
     const data = await res.json();
     const newArtists = artistsSourceAdapter(data.artists.items);
     return newArtists;
@@ -48,6 +63,12 @@ export const getArtistById = async (id: string) => {
         Authorization: `Bearer ${getToken()}`,
       },
     });
+
+    if (await verifyIfTokenIsValid(res.status)) {
+      await getArtistById(id);
+      return null;
+    }
+
     const data = await res.json();
     const artistFound = artistDetailAdapter(data);
     return artistFound;

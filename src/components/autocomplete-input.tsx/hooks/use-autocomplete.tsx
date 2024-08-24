@@ -135,8 +135,10 @@ export default function useAutoComplete({
   return {
     bindOption: {
       onClick: (e: React.MouseEvent<HTMLLIElement>) => {
-        const nodes = Array.from(listRef.current?.children ?? []);
-        selectOption(nodes.indexOf(e.target as HTMLLIElement));
+        const index = [...e.currentTarget.parentElement!.children].indexOf(
+          e.currentTarget
+        );
+        selectOption(index);
       },
     },
     bindInput: {
@@ -151,5 +153,6 @@ export default function useAutoComplete({
     isBusy,
     suggestions,
     selectedIndex,
+    clearSuggestions,
   };
 }

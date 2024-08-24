@@ -1,4 +1,3 @@
-import React from 'react';
 import { BindOption, BindOptions, Option } from '../models/autocomplete.model';
 import styles from '../styles/listbox.module.css';
 import { OptionItem } from './option-item';

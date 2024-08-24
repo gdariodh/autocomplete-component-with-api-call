@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { verifyToken } from '@/utils';
 import './styles/app.css';
 import { Home } from '@/pages';

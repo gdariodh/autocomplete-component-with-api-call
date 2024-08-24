@@ -1,4 +1,3 @@
-import React from 'react';
 import { VITE_MY_WEBSITE_URL } from '@/config/constants';
 
 export function Footer() {

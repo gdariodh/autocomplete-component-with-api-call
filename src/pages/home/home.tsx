@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArtistDetail as IArtistDetail } from '@/models';
 import { getArtistById, getArtistsBySearch } from '@/services/spotify.service';
 import styles from '@/pages/home/styles/home.module.css';

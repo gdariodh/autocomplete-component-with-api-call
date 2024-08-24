@@ -1,4 +1,3 @@
-import React from 'react';
 import { BaseComponentProps, SizeClassMap } from '@/models';
 import styles from '@/styles/data-display.module.css';
 

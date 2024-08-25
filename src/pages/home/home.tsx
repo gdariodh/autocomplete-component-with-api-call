@@ -1,28 +1,70 @@
-import { useState } from 'react';
-import { ArtistDetail as IArtistDetail } from '@/models';
-import { getArtistById, getArtistsBySearch } from '@/services/spotify.service';
-import styles from '@/pages/home/styles/home.module.css';
-import { AutoCompleteInput } from '@/components';
-import { ArtistDetail } from '@/pages/home/components';
+import './styles/home.css';
+import { SearchArtist, SearchTracks } from '@/pages/home/components';
+import { Paragraph, Title } from '@/components';
 
 export function Home() {
-  const [artistDetail, setArtistDetail] = useState<IArtistDetail | null>(null);
-
-  const handleSelection = async (value: string) => {
-    const newArtist = await getArtistById(value.toString());
-    setArtistDetail(newArtist);
-  };
-
   return (
-    <div className={styles.homeWrapper}>
-      <AutoCompleteInput
-        placeholder="Looking for an artist? Start typing here"
-        delay={500}
-        source={getArtistsBySearch}
-        handleSelection={handleSelection}
-      />
+    <section className="homeWrapper">
+      <div>
+        <Title size="large">Autocomplete Component with API CALLS</Title>
+        <Paragraph size="medium">
+          The filtering of the data is asynchronous, you can use any API to
+          fetch the data and pass it to the component.
+        </Paragraph>
+        <Paragraph>
+          These examples are using the Spotify API Developers.
+        </Paragraph>
+        <Paragraph size="medium">
+          You can see two different variants bellow!
+        </Paragraph>
+      </div>
 
-      {artistDetail && <ArtistDetail item={artistDetail} />}
-    </div>
+      <div className="listOfCardHome">
+        <div className="cardHome">
+          <div className="cardHomeHeader">
+            <Title size="medium">Variant: Custom </Title>
+
+            <div className="cardHomeHeaderItem">
+              <Paragraph size="small">
+                <span>About:</span>
+                (Children prop passed) the children prop will be rendered and
+                receives the necessary autocomplete props.
+              </Paragraph>
+            </div>
+
+            <div className="cardHomeHeaderItem">
+              <Paragraph size="small">
+                <span>API:</span>"/search?type=track&q=search"
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="cardHomeBody">
+            <SearchTracks />
+          </div>
+        </div>
+        <div className="cardHome">
+          <div className="cardHomeHeader">
+            <Title size="small">Variant: Dropdown - Default Variant</Title>
+
+            <div className="cardHomeHeaderItem">
+              <Paragraph size="small">
+                <span>About:</span>(No children prop passed)
+              </Paragraph>
+            </div>
+
+            <div className="cardHomeHeaderItem">
+              <Paragraph size="small">
+                <span>API:</span>"/search?type=artist&q=search"
+              </Paragraph>
+            </div>
+          </div>
+
+          <div className="cardHomeBody">
+            <SearchArtist />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -6,6 +6,7 @@
   --primary-color: #282828;
   --secondary-color: #cbd5e1;
   --tertiary-color: #ff1154;
+  --skeleton-color: #e0e0e0;
 }
 
 body {
@@ -87,17 +88,16 @@ footer {
   position: fixed;
 }
 
-/* end layout */
-
-.page-container {
+/* custom classes */
+.pageContainer {
   display: block;
   height: calc(100% - 4rem);
   margin: 0 auto;
-  max-width: 800px;
-  padding: 2rem 2rem 10rem 2rem;
+  max-width: 1200px;
+  padding: 2rem 1rem 10rem 1rem;
 }
 
-.contact-link {
+.contactLink {
   color: var(--secondary-color);
   font-weight: 600;
   padding: 0;
@@ -106,7 +106,7 @@ footer {
     text-decoration 0.3s ease-out;
 }
 
-.contact-link:hover {
+.contactLink:hover {
   color: var(--tertiary-color);
   text-decoration: underline;
   transform: translateX(2px);

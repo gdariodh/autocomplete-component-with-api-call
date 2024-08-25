@@ -1,7 +1,9 @@
+/* container */
 .autoCompleteContainer {
   position: relative;
 }
 
+/* wrapper */
 .searchInputWrapper {
   align-items: center;
   color: var(--primary-color);
@@ -10,6 +12,7 @@
   width: 100%;
 }
 
+/* search input */
 .searchInput {
   background: var(--bg-color);
   border-radius: var(--border-radius);
@@ -61,6 +64,7 @@
   top: 0;
 }
 
+/* animation */
 .spinner {
   animation: spin 1s linear infinite;
   border-color: var(--primary-color);

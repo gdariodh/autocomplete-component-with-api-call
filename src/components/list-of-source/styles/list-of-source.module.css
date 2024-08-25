@@ -1,0 +1,21 @@
+/* listbox */
+.listbox {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+}
+
+/* option */
+.option {
+}
+
+.optionItemActive {
+  background-color: var(--secondary-color);
+}
+
+@media (min-width: 768px) {
+  .listbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,25 +1,16 @@
-.homeWrapper {
-  display: grid;
-  gap: 2rem;
-  max-width: 500px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* card artist */
 .card {
-  position: relative;
   align-items: center;
   background: var(--bg-color);
   border-radius: 5px;
   border: var(--border-width) solid var(--primary-color);
-  margin: auto;
-  width: 100%;
   box-shadow: 4px 4px 0 var(--primary-color);
-  min-height: 400px;
+  margin: auto;
   padding: 1.5rem 2rem;
+  position: relative;
+  width: 100%;
 }
 
+/* card header */
 .cardHeader {
   margin-right: auto;
 }
@@ -39,10 +30,11 @@
   width: 100%;
 }
 
+/* card body */
 .cardBody {
   display: flex;
   flex-direction: column;
-  padding: 1.5rem 0;
+  padding: 0 0 1.5rem 0;
   width: 100%;
 }
 
@@ -53,11 +45,12 @@
 
 .cardBodyListRow {
   display: flex;
-  gap: 0.25rem;
   flex-wrap: wrap;
+  gap: 0.25rem;
   text-wrap: nowrap;
 }
 
+/* card item */
 .cardBodyItem {
   display: grid;
   gap: 1rem;
@@ -70,6 +63,25 @@
   flex-direction: column;
 }
 
+/* skeleton */
+.cardSkeletonImage {
+  height: 120px;
+  width: 120px;
+  background-color: var(--skeleton-color);
+}
+
+.cardSkeletonBox {
+  height: 0.875rem;
+  background-color: var(--skeleton-color);
+}
+
+.cardSkeletonButton {
+  height: 40px;
+  width: 120px;
+  background-color: var(--skeleton-color);
+}
+
+/* breakpoints */
 @media (min-width: 768px) {
   .cardImage {
     height: 200px;
@@ -80,4 +92,30 @@
     grid-template-columns: 120px 1fr;
   }
 }
-/* end card artist */
+
+/* variants */
+.cardSimple {
+  cursor: pointer;
+  transition: box-shadow 0.14s ease-out, transform 0.14s ease-out;
+  padding: 1rem;
+  height: 100%;
+}
+
+.cardSimple:hover {
+  background: var(--secondary-color);
+  box-shadow: 4px 4px 0 var(--primary-color);
+  transform: translate(-4px, -4px);
+}
+
+.cardSimpleHeader {
+  padding: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.cardImageSimple {
+  height: 40px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 40px;
+}

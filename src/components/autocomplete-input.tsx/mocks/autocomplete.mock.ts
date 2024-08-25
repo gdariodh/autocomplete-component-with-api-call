@@ -1,4 +1,4 @@
-import { Option } from '../models/autocomplete.model';
+import { OptionSourceAutoComplete } from '@/components/autocomplete-input.tsx';
 
 export const Options = [
   {
@@ -33,4 +33,4 @@ export const Options = [
     value: 7,
     label: 'David Guetta',
   },
-] as Option[];
+] as OptionSourceAutoComplete[];

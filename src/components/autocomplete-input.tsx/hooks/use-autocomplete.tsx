@@ -1,19 +1,21 @@
 import React, { useRef, useState, useCallback } from 'react';
-import { KEY_CODES } from '../constants/autocomplete.constant';
 import {
-  Option,
+  KEY_CODES,
   UseAutoCompleteProps,
   UseAutoCompleteReturn,
-} from '../models/autocomplete.model';
+  OptionSourceAutoComplete,
+} from '@/components/autocomplete-input.tsx';
 
-export default function useAutoComplete({
+export function useAutoComplete({
   delay = 500,
   source,
   onChange,
 }: UseAutoCompleteProps): UseAutoCompleteReturn {
   const [myTimeout, setMyTimeout] = useState<number | null>(null);
   const listRef = useRef<HTMLUListElement>(null);
-  const [suggestions, setSuggestions] = useState<Option[]>([]);
+  const [suggestions, setSuggestions] = useState<OptionSourceAutoComplete[]>(
+    []
+  );
   const [isBusy, setBusy] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [textValue, setTextValue] = useState('');

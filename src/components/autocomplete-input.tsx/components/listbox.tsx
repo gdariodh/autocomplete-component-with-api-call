@@ -1,9 +1,13 @@
-import { BindOption, BindOptions, Option } from '../models/autocomplete.model';
+import {
+  BindOption,
+  BindOptions,
+  OptionItem,
+  OptionSourceAutoComplete,
+} from '@/components/autocomplete-input.tsx';
 import styles from '../styles/listbox.module.css';
-import { OptionItem } from './option-item';
 
 interface ListBoxProps {
-  options: Option[];
+  options: OptionSourceAutoComplete[];
   selectedIndex: number;
   bindOption: BindOption;
   bindOptions: BindOptions;

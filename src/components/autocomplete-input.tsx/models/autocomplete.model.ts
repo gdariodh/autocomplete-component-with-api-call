@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface Image {
   alt: string;
   height: number;
@@ -5,28 +7,37 @@ export interface Image {
   width: number;
 }
 
-export interface Option {
+export interface OptionSourceAutoComplete {
   label: string;
   value: any;
   image?: Image;
 }
 
+export interface AutoCompleteHandler {
+  options: OptionSourceAutoComplete[];
+  bindOption: BindOption;
+  bindOptions: BindOptions;
+  selectedIndex: number;
+}
+
 export interface AutoCompleteInputProps {
   placeholder?: string;
   delay?: number;
-  source: (search: string) => Promise<Option[]>;
+  className?: string;
+  children?: (args: AutoCompleteHandler) => React.ReactNode;
+  source: (search: string) => Promise<OptionSourceAutoComplete[]>;
   handleSelection: (value: any) => void;
 }
 
 export interface OptionItemProps {
-  item: Option;
+  item: OptionSourceAutoComplete;
   isActive: boolean;
 }
 
 export interface UseAutoCompleteProps {
   delay?: number;
-  source: (searchTerm: string) => Promise<Option[]>;
-  onChange: (selectedOption: Option) => void;
+  source: (searchTerm: string) => Promise<OptionSourceAutoComplete[]>;
+  onChange: (selectedOption: OptionSourceAutoComplete) => void;
 }
 
 export interface UseAutoCompleteReturn {
@@ -34,7 +45,7 @@ export interface UseAutoCompleteReturn {
   bindInput: BindInput;
   bindOptions: BindOptions;
   isBusy: boolean;
-  suggestions: Option[];
+  suggestions: OptionSourceAutoComplete[];
   selectedIndex: number;
   clearSuggestions: () => void;
 }

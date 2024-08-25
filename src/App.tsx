@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       <Header />
-      <main className="page-container">
+      <main className="pageContainer">
         <Home />
       </main>
       <Footer />

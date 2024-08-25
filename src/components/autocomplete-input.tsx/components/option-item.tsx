@@ -1,4 +1,4 @@
-import { OptionItemProps } from '../models/autocomplete.model';
+import { OptionItemProps } from '@/components/autocomplete-input.tsx';
 import styles from '../styles/listbox.module.css';
 import { UserIcon } from '@/components';
 

@@ -1,9 +1,20 @@
 import React from 'react';
 
-export type Size = 'small' | 'medium' | 'large';
+enum SizeValue {
+  SMALL = 'small',
+  MEDIUM = 'medium',
+  LARGE = 'large',
+}
+export type Size = `${SizeValue}`;
 export type SizeClassMap = Record<Size, string>;
 
-export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl';
+enum BreakpointValue {
+  SMALL = 'sm',
+  MEDIUM = 'md',
+  LARGE = 'lg',
+  EXTRA_LARGE = 'xl',
+}
+export type Breakpoint = `${BreakpointValue}`;
 export type BreakpointClassMap = Record<Breakpoint, string>;
 
 export interface BaseIconProps extends React.SVGProps<SVGSVGElement> {
@@ -14,7 +25,5 @@ export interface BaseIconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 export interface BaseComponentProps extends React.ComponentProps<'div'> {
-  className?: string;
-  style?: React.CSSProperties;
   size?: Size;
 }

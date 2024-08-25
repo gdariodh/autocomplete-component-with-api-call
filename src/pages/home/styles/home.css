@@ -14,7 +14,6 @@
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  flex-direction: column;
   gap: 1rem;
   justify-content: center;
 }
@@ -53,10 +52,11 @@
 
 .searchDetail p:first-child {
   text-align: center;
+  color: var(--text-alt-color);
 }
 
 .searchDetailActive p:first-child {
-  color: var(--primary-color);
+  color: var(--text-color);
   font-weight: bold;
 }
 

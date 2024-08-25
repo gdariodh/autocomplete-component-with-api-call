@@ -43,14 +43,11 @@ export const verifyIfTokenIsValid = async (status: number) => {
 
 export const getArtistsBySearch = async (search: string) => {
   try {
-    const res = await fetch(
-      `${API_BASE_URL}/search?type=artist&q=${search}&limit=${API_LIMIT}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      }
-    );
+    const res = await fetch(`${API_BASE_URL}/search?type=artist&q=${search}`, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
 
     if (await verifyIfTokenIsValid(res.status)) {
       await getArtistsBySearch(search);

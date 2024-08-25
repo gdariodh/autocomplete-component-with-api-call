@@ -6,7 +6,7 @@
 /* wrapper */
 .searchInputWrapper {
   align-items: center;
-  color: var(--primary-color);
+  color: var(--text-color);
   display: flex;
   position: relative;
   width: 100%;
@@ -14,11 +14,11 @@
 
 /* search input */
 .searchInput {
-  background: var(--bg-color);
+  background: var(--bas);
   border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--border-alt-color);
   box-sizing: border-box;
-  color: var(--primary-color);
+  color: var(--text-color);
   display: block;
   display: flex;
   font-size: 1rem;
@@ -32,7 +32,7 @@
 }
 
 .searchInput:focus {
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--border-color);
   box-shadow: -10px -8px 0px var(--primary-color);
 }
 
@@ -67,7 +67,7 @@
 /* animation */
 .spinner {
   animation: spin 1s linear infinite;
-  border-color: var(--primary-color);
+  border-color: var(--text-color);
   border-radius: 50%;
   border-style: dashed;
   border-width: var(--border-width);

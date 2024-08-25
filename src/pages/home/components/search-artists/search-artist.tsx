@@ -26,7 +26,7 @@ export function SearchArtist() {
       >
         <Paragraph size="small">
           {artistDetail
-            ? 'Artist Detail'
+            ? `You have selected the artist: ${artistDetail.name}`
             : 'Select an artist to see the detail'}
         </Paragraph>
         <CardArtist artist={artistDetail} type="extended" />

@@ -33,7 +33,9 @@ export function SearchTracks() {
         className={`searchDetail ${trackDetail ? 'searchDetailActive' : ''}`}
       >
         <Paragraph size="small">
-          {trackDetail ? 'Track Detail' : 'Select a track to see the detail'}
+          {trackDetail
+            ? `You have selected the track: ${trackDetail.name}`
+            : 'Select a track to see the detail'}
         </Paragraph>
         <CardArtist artist={trackDetail} type="extended" />
       </div>

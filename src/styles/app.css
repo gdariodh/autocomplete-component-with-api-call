@@ -1,17 +1,21 @@
 :root {
-  --bg-color-layout-color: #ffff;
-  --bg-color: #f9f9f9;
+  --bg-color: #ffff;
   --border-radius: 5px;
   --border-width: 3px;
-  --primary-color: #282828;
+  --primary-color: #8576ff;
   --secondary-color: #cbd5e1;
   --tertiary-color: #ff1154;
   --skeleton-color: #e0e0e0;
+  --text-color: #000;
+  --text-alt-color: #3c3c3c;
+  --border-color: #000;
+  --border-alt-color: #cbd5e1;
+  --bg-layout-color: #000;
 }
 
 body {
-  background: var(--bg-color-layout-color);
-  color: var(--primary-color);
+  background: var(--bg-color);
+  color: var(--text-color);
 }
 
 h1,
@@ -20,7 +24,6 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--primary-color);
   display: block;
   font-weight: 600;
 }
@@ -34,7 +37,7 @@ a {
   align-items: center;
   background: 0 0;
   border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--border-alt-color);
   color: var(--primary-color-input);
   cursor: pointer;
   display: inline-flex;
@@ -56,7 +59,8 @@ a {
 
 button:hover,
 a:hover {
-  box-shadow: 4px 4px 0 var(--primary-color);
+  border: 4px solid var(--border-color);
+  box-shadow: 10px 8px 0px var(--primary-color);
   transform: translate(-4px, -4px);
 }
 
@@ -68,8 +72,7 @@ a:focus-visible {
 /* layout */
 header,
 footer {
-  background: var(--primary-color);
-  border-top: var(--border-width) solid var(--primary-color);
+  background: var(--bg-layout-color);
   color: var(--bg-color);
   font-size: 0.875rem;
   padding: 1rem;
@@ -104,10 +107,14 @@ footer {
   text-decoration: none;
   transition: color 0.14s ease-out, transform 0.14s ease-out,
     text-decoration 0.3s ease-out;
+  box-shadow: none;
+  border: none;
 }
 
 .contactLink:hover {
   color: var(--tertiary-color);
   text-decoration: underline;
   transform: translateX(2px);
+  box-shadow: none;
+  border: none;
 }

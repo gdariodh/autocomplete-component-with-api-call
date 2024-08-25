@@ -22,7 +22,7 @@ export function Home() {
       <div className="listOfCardHome">
         <div className="cardHome">
           <div className="cardHomeHeader">
-            <Title size="medium">Variant: Custom </Title>
+            <Title size="small">Variant: Custom </Title>
 
             <div className="cardHomeHeaderItem">
               <Paragraph size="small">

@@ -1,14 +1,14 @@
 /* pill */
 .pill {
   background-color: var(--bg-color);
-  color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: var(--border-width) solid var(--border-alt-color);
+  color: var(--text-color);
   display: inline-flex;
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem;
-  text-wrap: wrap;
   position: relative;
-  border: var(--border-width) solid var(--primary-color);
-  border-radius: var(--border-radius);
+  text-wrap: wrap;
 }
 
 /* title variants */

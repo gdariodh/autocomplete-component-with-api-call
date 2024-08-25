@@ -1,7 +1,7 @@
 /* listbox */
 .listbox {
   background-color: var(--bg-color);
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--border-color);
   border-top-width: 0px;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
   left: 0;
@@ -35,7 +35,7 @@
 .optionItemImage {
   align-items: center;
   border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--borde-color);
   box-shadow: 0 0 0 1px var(--secondary-color);
   display: flex;
   height: 2rem;

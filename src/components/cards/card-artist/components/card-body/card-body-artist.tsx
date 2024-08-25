@@ -54,7 +54,7 @@ export function CardBodyArtist() {
         )}
 
         {spotifyUrl && (
-          <CardItemArtist label="More Info" direction="column">
+          <CardItemArtist label="more Info" direction="column">
             <a href={artist.spotifyUrl} target="_blank">
               View Spotify
             </a>

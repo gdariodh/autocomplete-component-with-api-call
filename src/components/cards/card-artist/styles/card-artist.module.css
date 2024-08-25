@@ -2,8 +2,8 @@
   align-items: center;
   background: var(--bg-color);
   border-radius: 5px;
-  border: var(--border-width) solid var(--primary-color);
-  box-shadow: 4px 4px 0 var(--primary-color);
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: 4px 4px 0 var(--border-color);
   margin: auto;
   padding: 1.5rem 2rem;
   position: relative;
@@ -17,7 +17,7 @@
 
 .cardImage {
   border-radius: var(--border-radius);
-  border: var(--border-width) solid var(--primary-color);
+  border: var(--border-width) solid var(--border-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   height: 120px;
   object-fit: cover;
@@ -103,7 +103,6 @@
 
 .cardSimple:hover {
   background: var(--secondary-color);
-  box-shadow: 4px 4px 0 var(--primary-color);
   transform: translate(-4px, -4px);
 }
 

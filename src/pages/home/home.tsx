@@ -8,14 +8,12 @@ export function Home() {
       <div>
         <Title size="large">Autocomplete Component with API CALLS</Title>
         <Paragraph size="medium">
-          The filtering of the data is asynchronous, you can use any API to
-          fetch the data and pass it to the component.
+          Data filtering is asynchronous, you can use any API to fetch the data
+          and pass it to the component.
         </Paragraph>
         <Paragraph>
-          These examples are using the Spotify API Developers.
-        </Paragraph>
-        <Paragraph size="medium">
-          You can see two different variants bellow!
+          The two examples you can find below are getting data from the Spotify
+          API Developers
         </Paragraph>
       </div>
 

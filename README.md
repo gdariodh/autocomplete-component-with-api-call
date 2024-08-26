@@ -1,50 +1,131 @@
-# React + TypeScript + Vite
+# Autocomplete Component with API CALLS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [Stack](#stack)
+- [Feature](#feature)
+- [Prerequisites](#prerequisites)
+- [Installation](#Installation)
+- [Run](#run)
+- [Usage](#usage)
+- [Deployment](#deployment)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## STACK
 
-## Expanding the ESLint configuration
+- React.
+- CSS Native & CSS Module.
+- No third-party libraries.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Feature
 
-- Configure the top-level `parserOptions` property like this:
+The Autocomplete component is a robust and flexible solution, fully encapsulated for reusability and easily adaptable for integration into a component library like Storybook. It supports custom children as a prop, rendering a default dropdown if none are provided.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+The component is designed to work with any API call, with asynchronous data filtering to enhance performance and user experience.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://yarnpkg.com/) or [NPM](https://www.npmjs.com/)
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+ git clone https://github.com/gdariodh/autocomplete-component-with-api-call
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install dependencies:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+##### yarn
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+ yarn install
+```
+
+##### npm
+
+```bash
+ npm install
+```
+
+## Run
+
+##### http://localhost:3000/
+
+##### yarn
+
+```bash
+ yarn dev
+```
+
+#### npm
+
+```bash
+npm run dev
+```
+
+#### Usage
+
+```TSX
+export interface OptionSourceAutoComplete {
+  label: string;
+  value: any;
+  image?: Image;
+}
+
+import { useCallback } from 'react';
+import { AutoCompleteInput } from '@/components';
+
+export function Example() {
+
+
+    const source = async () => {
+        // Fetches data from an API. The autocomplete component receives an array of objects as OptionSourceAutoComplete.
+    }
+
+
+    const handleSelection = useCallback(async (value: string) => {
+        console.log({value})
+        // DO SOMETHING...
+    }, []);
+
+    return (
+    <AutoCompleteInput
+            // placeholder optional
+            placeholder="Looking for an ...?"
+            // delay optional
+            delay={500}
+            // source required
+            source={source}
+            // handleSelection required
+            handleSelection={handleSelection}
+            // className optional
+            className="classExample"
+            >
+            {/* Children prop is optional. If not provided, the autocomplete renders a dropdown by default. */}
+            {(props) => <ChildrenComponent {...props} />}
+        </AutoCompleteInput>
+    )
+}
+```
+
+## Deployment
+
+#### yarn
+
+```bash
+yarn build
+```
+
+#### npm
+
+```bash
+npm run build
+```
+
+### Click here to view the app
+
+```link
+https://autocomplete-component-with-api-call.vercel.app/
 ```
